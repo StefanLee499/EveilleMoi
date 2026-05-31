@@ -10,7 +10,7 @@ import {
   type Article,
 } from "./content";
 
-const DATA_DIR = path.join(process.cwd(), ".data");
+const DATA_DIR = process.env.VERCEL ? "/tmp/.data" : path.join(process.cwd(), ".data");
 
 async function ensure() {
   await fs.mkdir(DATA_DIR, { recursive: true });
