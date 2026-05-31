@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 
 export default async function ContactPage() {
   const services = await getServices();
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || process.env.CALENDLY_URL || "";
+  const calendlyUrl = "https://calendly.com/your-handle/30min"; // <-- Replace with your actual Calendly URL
   return (
     <Suspense fallback={<div className="container-x py-32" />}>
       <ContactClient services={services} calendlyUrl={calendlyUrl} />
